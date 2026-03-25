@@ -1,0 +1,120 @@
+
+input {
+  width: 100%;
+}
+
+#gobutton {
+	display: inline-block;
+	background: #8f7a66;
+	border-radius: 3px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 40px;
+	line-height: 42px;
+	margin-top: 9px;
+	margin-bottom: 9px;
+}
+
+#downloadButton {
+	display: inline-block;
+	text-align: center;
+	background: #b1a091;
+	border-radius: 4px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 33px;
+	line-height: 33px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+#downloadButton:hover {
+	display: inline-block;
+	text-align: center;
+	background: #b1a091 !important; 
+}
+
+
+
+#arrowButtonRight, #arrowButtonLeft {
+	display: inline-block;
+	text-align: center;
+	background: #8f7a66;
+	border-radius: 4px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 33px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+#helpButton, #justificationButton {
+	display: inline-block;
+	text-align: center;
+	background: #8f7a66;
+	border-radius: 4px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 33px;
+	line-height: 33px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	float: right;
+}
+
+
+
+#justificationButton:hover, #arrowButtonRight:hover, #arrowButtonLeft:hover, #agreeButton:hover, #disagreeButton:hover, #unsureButton:hover, #helpButton:hover, #unclearButton:hover {
+	display: inline-block;
+	text-align: center;
+	background: #b1a091 !important; 
+}
+
+#agreeButton, #disagreeButton, #unsureButton {
+	text-align: center;
+	display: inline-block;
+	background: #8f7a66;
+	border-radius: 3px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 33px;
+	line-height: 33px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#unclearButton {
+	text-align: center;
+	display: inline-block;
+	background: #8f7a66;
+	border-radius: 3px;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #f9f6f2;
+	height: 33px;
+	line-height: 33px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: right;
+}
+
+#agreeButton:disabled, #disagreeButton:disabled, #unsureButton:disabled, #unclearButton:disabled, #helpButton:disabled, #downloadButton:disabled {
+	display: inline-block;
+	background: #b1a091;
+}
+
+
+@media (max-width: 1110px) {
+    .explanation {
+        display: block; /* Optional: Force block layout if flexbox/grid */
+    }
+}
+
+

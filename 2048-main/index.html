@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>2048</title>
+
+  <link href="style/main.css" rel="stylesheet" type="text/css">
+  <link href="style/settings.css" rel="stylesheet" type="text/css">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="meta/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <div class="scores-container">
+        <div class="score-container">0</div>
+        <div class="best-container">0</div>
+        <!-- <div class="agree-container">0</div> -->
+        <div class="deviation-container">0</div>
+      </div>
+       <h1 class="title">2048</h1>
+    </div>
+    <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+    
+    <div class="container-for-flex">
+    <div class="game-container">
+      <div class="everything-else">
+      <div class="game-message">
+        <p></p>
+        <div class="lower">
+          <a class="retry-button">Try again</a>
+        </div>
+      </div>
+
+
+      <div class="grid-container">
+	<div class="grid-row">
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	</div>
+	<div class="grid-row">
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	</div>
+	<div class="grid-row">
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	</div>
+	<div class="grid-row">
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	  <div class="grid-cell"></div>
+	</div>
+      </div>
+      <div class="tile-container">
+
+      </div>
+      </div>
+    </div>
+          <div class="explanation">
+	    <p class="move-suggestion-header"><b>Suggested move:</b></p> <p class="move-suggestion" style="font-size: 70px;line-height: 50px;padding-top: 20px;"></p><br /> 
+        
+      <div class="buttons">
+        <a id="agreeButton">Agree [E]</a> 
+        <a id="disagreeButton">Disagree [R] </a>
+        <a id="unsureButton">Show explanation [SPACE]</a>
+        </div>
+
+      <hr>
+      <p class="explanation-header" style="display: none"><b>Explanation (<span id="explanation-container"></span>):</b></p> 
+      <p class="move-explanation" id="e-winning" style="display: none"></p>
+      <p class="move-explanation" id="e-ordered" style="display: none"></p>
+      <p class="move-explanation" id="e-alternative" style="display: none"></p><br />
+       <a id="justificationButton" style="display: none" >Next explanation</a>
+       <a id="helpButton" style="display: none" >Show more</a> <br />
+       
+       <p id="helptext" style="display: none; padding-top: 20px"> 
+        <span id="helptext-container"></span> </p>
+       <hr id="helpline" style="display: none">
+       <a id="unclearButton" style="display: none" >Explanation <span id="explanation-container"></span> unhelpful</a> 
+        </div>
+    </div>
+    <p class="game-explanation">
+    <a id="downloadButton">Download</a><br />
+     <hr>
+      <strong class="important">How to play: <p> </strong> When two tiles with the same number touch, they <strong>merge into one!</strong> Your goal is ro reach the <strong>2048 tile</strong>.</p>
+      <p> Each turn, you'll be shown a suggested move. You can follow it or play your own move. If follow the suggestion, it counts as agreement. If you ignore it, it counts as disagreement. </p> 
+      
+      <p> If your move and your actual opinion don't match, click <strong>[E]</strong> to agree or <strong>[R]</strong> to disagree with the suggestion.</p>
+      <p> If you are unsure about a given move suggestion, click on <strong>[Show explanation]</strong> to see the reasoning behind the suggestion. To get additional context for that explanation, click <strong>[Show more]</strong>. If you deem the explanation as unclear, click <strong>[Explanation unhelpful]</strong> to mark it as unclear. You can do this for each of the three explanation slides that are generated per turn. </p>
+
+      <p>Select a policy by choosing one in the dropdown menu. Play each policy three times until you reach the end of a game. You are welcome to play more, if you want to. Once you are done, please click <strong>[Download]</strong> and send the file to <a href="mailto:juwa@uni-bremen.de">juwa@uni-bremen.de</a>. </p>
+      <p>Thank you and have fun!</p>
+    </p>
+    <hr>
+    <strong class="important">Settings</strong> <br />
+    Script url: <input id="script"></input>
+    policy url: 
+    <select policy="policy" id="policy">
+      <option value="./policy2.js" selected>Policy1</option>
+      <option value="./policy5.js">Policy2</option>
+      <option value="./policy8.js">Policy3</option>
+    </select> <br />
+    <!--RNG seed: <input id="seed"></input>-->
+    <a id="gobutton">go</a> <br />
+    <!--Playback interval (0 to pause): <input id="interval" value="100"></input> -->
+    <hr>
+    <p>
+    <strong class="important">Note:</strong> This site is <strong>NOT</strong> the official version of 2048. Original can be found at <a href="http://git.io/2048">http://git.io/2048.</a>.
+    </p>
+    <hr>
+    <p>
+    Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a> AI fork by <a href="http://github.com/murgo">Lauri Härsilä<a>.
+    </p>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/seedrandom/2.3.3/seedrandom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/ai_input_manager.js"></script>
+
+  <script src="js/animframe_polyfill.js"></script>
+  <script src="js/keyboard_input_manager.js"></script>
+  <script src="js/tracker.js"></script>
+  <script src="js/suggestion_generator.js"></script>
+  <script src="js/html_actuator.js"></script>
+  <script src="js/grid.js"></script>
+  <script src="js/tile.js"></script>
+  <script src="js/local_score_manager.js"></script>
+  <script src="js/game_manager.js"></script>
+  <script src="js/application.js"></script>
+  
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-48977830-1', 'murgo.github.io');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
